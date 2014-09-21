@@ -1,0 +1,199 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,600);
+
+$blue: hsl(206,72%,68%);
+$green: hsl(120,42%,54%);
+$white: hsl(0, 0%, 100%);
+$grey: hsl(226,10%,55%);
+$disa: hsl(226,15%,83%);
+
+body {
+  background-color: hsl(0, 0%, 90%);
+
+  font-family: 'Open Sans', sans-serif;
+}
+#steps {
+  width: 504px;
+  margin: 10px auto;
+}
+
+.step {
+  width: 40px;
+  height: 40px;
+  background-color: $white;
+  display: inline-block;
+  border: 4px solid;
+  border-color: transparent;
+  border-radius: 50%;
+
+  color: $disa;
+  font-weight: 600;
+  text-align: center;
+  line-height: 35px;
+}
+.step:first-child {
+  line-height: 40px;
+}
+.step:nth-child(n+2) {
+  margin: 0 0 0 100px;
+  transform: translate(0, -4px);
+}
+.step:nth-child(n+2):before {
+  width: 75px;
+  height: 3px;
+  display: block;
+  background-color: $white;
+  transform: translate(-95px, 21px);
+  content: '';
+}
+.step:after {
+  width: 150px;
+  display: block;
+  transform: translate(-55px, 3px);
+
+  color: $grey;
+  content: attr(data-desc);
+  font-weight: 400;
+  font-size: 13px;
+}
+.step:first-child:after {
+  transform: translate(-55px, -1px);
+}
+.step.active {
+  border-color: $blue;
+
+  color: $blue;
+}
+.step.active:before {
+  background: linear-gradient(to right, $green 0%,
+                                        $blue 100%);
+}
+.step.active:after {
+  color: $blue;
+}
+.step.done {
+  background-color: $green;
+  border-color: $green;
+
+  color: $white;
+}
+.step.done:before {
+  background-color: $green;
+}
+
+#DIV_12 {
+z-index: 1;
+margin-top: -100px;
+float: right;
+    box-sizing: border-box;
+    color: rgb(102, 102, 102);
+    height: 75px;
+    width: 214px;
+    perspective-origin: 107px 37.5px;
+    transform-origin: 107px 37.5px;
+    border-top: 0px none rgb(102, 102, 102);
+    border-right: 0px none rgb(102, 102, 102);
+
+    border-left: 0px none rgb(102, 102, 102);
+    font: normal normal normal 16px/22.3999996185303px ProximaNovaLight, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    outline: rgb(102, 102, 102) none 0px;
+    padding: 15px 0px 0px 10px;
+}/*#DIV_1*/
+
+#DIV_2 {
+    box-sizing: border-box;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+    display: inline-block;
+    height: 61px;
+    width: 141.484375px;
+    perspective-origin: 70.734375px 30.5px;
+    transform-origin: 70.734375px 30.5px;
+    border: 0px none rgb(102, 102, 102);
+    font: normal normal normal 16px/22.3999996185303px ProximaNovaLight, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    outline: rgb(102, 102, 102) none 0px;
+}/*#DIV_2*/
+
+#META_3, #META_4, #META_10 {
+    box-sizing: border-box;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+    border: 0px none rgb(102, 102, 102);
+    font: normal normal normal 16px/22.3999996185303px ProximaNovaLight, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    outline: rgb(102, 102, 102) none 0px;
+}/*#META_3, #META_4, #META_10*/
+
+#META_5 {
+    box-sizing: border-box;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+    border: 0px none rgb(102, 102, 102);
+    font: normal normal normal 16px/22.3999996185303px ProximaNovaLight, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    outline: rgb(102, 102, 102) none 0px;
+}/*#META_5*/
+
+#H3_6 {
+    box-sizing: border-box;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+    height: 19px;
+    letter-spacing: -0.419999986886978px;
+    width: 141.484375px;
+    perspective-origin: 70.734375px 9.5px;
+    transform-origin: 70.734375px 9.5px;
+    border: 0px none rgb(102, 102, 102);
+    font: normal normal normal 14px/19.6000003814697px ProximaNovaLight, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0px;
+    outline: rgb(102, 102, 102) none 0px;
+}/*#H3_6*/
+
+#SPAN_7 {
+    box-sizing: border-box;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+    display: inline-block;
+    height: 14px;
+    letter-spacing: -0.419999986886978px;
+    width: 101px;
+    perspective-origin: 50.5px 7px;
+    transform-origin: 50.5px 7px;
+    background: rgba(0, 0, 0, 0) url(https://asset1.betterdoctor.com/assets/consumer/profile-page/bd-rating-logo.png) no-repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(102, 102, 102);
+    font: normal normal normal 14px/19.6000003814697px ProximaNovaLight, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0px 5px 0px 0px;
+    outline: rgb(102, 102, 102) none 0px;
+}/*#SPAN_7*/
+
+
+
+#DIV_9 {
+  padding-top: 12px;
+    box-sizing: border-box;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+    height: 32px;
+    width: 141.484375px;
+    perspective-origin: 70.734375px 16px;
+    transform-origin: 70.734375px 16px;
+    border: 0px none rgb(102, 102, 102);
+    font: normal normal normal 16px/22.3999996185303px ProximaNovaLight, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0px 0px 10px;
+    outline: rgb(102, 102, 102) none 0px;
+}/*#DIV_9*/
+
+#SPAN_11 {
+    box-sizing: border-box;
+    color: rgb(102, 102, 102);
+    cursor: pointer;
+    display: inline-block;
+    height: 19px;
+    width: 108px;
+    perspective-origin: 54px 9.5px;
+    transform-origin: 54px 9.5px;
+    background: rgba(0, 0, 0, 0) url(https://asset2.betterdoctor.com/assets/consumer/stars/stars-large-5.0.png) no-repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(102, 102, 102);
+    font: normal normal normal 16px/22.3999996185303px ProximaNovaLight, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 7px 0px 0px;
+    outline: rgb(102, 102, 102) none 0px;
+}/*#SPAN_11*/
+
+

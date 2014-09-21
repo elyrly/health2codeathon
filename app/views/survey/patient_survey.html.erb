@@ -1,0 +1,89 @@
+<html>
+<head>
+  <title>patient list</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+  <title>patient list</title>
+ <link href="/css/steps.css.scss" rel="stylesheet">
+ <link href="/css/new.css.scss" rel="stylesheet">
+</head>
+
+
+<!-- progress steps  -->
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<div id="steps">
+  <div class="step " data-desc="Select Patient">1</div>
+  <div class="step " data-desc="Select Meds">2</div>
+  <div class="step " data-desc="Education">3</div>
+  <div class="step active" data-desc="Teach Back">4</div>
+</div>
+
+
+<script>
+$(document).ready( function() {
+  $('.step').each(function(index, element) {
+    // element == this
+    $(element).not('.active').addClass('done');
+    $('.done').html('<i class="icon-ok"></i>');
+    if($(this).is('.active')) {
+      return false;
+    }
+  });
+});
+</script>
+<!-- end progress steps -->
+
+<!-- line break -->
+<hr style="border:none;border-top:1px solid rgba(102, 102, 102, 0.16);border-bottom:1px solid rgba(204, 204, 204, 0);" />
+<!-- end -->
+
+<%= render "/css" %>
+
+<hr style="border:none;border-top:1px solid rgba(102, 102, 102, 0.16);border-bottom:1px solid rgba(204, 204, 204, 0);" />
+
+
+<a href="/patient_list"><button class="button-large pure-button" style="font-size: 125%;" onclick="alert('Thank You')">Submit Education Session</button></a>
+
+
+<!-- our survey questions (three questions multiple choose) via List -->
+
+<br>
+<br>
+
+
+1. One of metoprolol’s important side effects is slowing the heart down too much.<br>
+<input type='radio' value="True">True</input><br>
+<input type='radio' value="False">False</input><br>
+
+<br>
+
+2. What foods should you eat more of  when taking furosemide?<br>
+<input type='radio' value="Bananas">Bananas</input><br>
+<input type='radio' value="Tomatoes">Tomatoes</input><br>
+<input type='radio' value="Dairy products">Dairy products</input><br>
+<input type='radio' value="All of the above">All of the above</input>
+<br>
+<br>
+
+
+3. What should I look out for when taking atorvastatin for a long time?
+<input type='radio' value="New kinds of muscle pain">New kinds of muscle pain</input><br>
+<input type='radio' value="Dark urine">Dark urine</input><br>
+<input type='radio' value="None of the above">None of the above</input><br>
+<input type='radio' value="All of the above">All of the above</input>
+
+<br>
+<br>
+<br>
+
+
+
+
+
+<!--  our education list (indication/education pt's) via List -->
+
+<body>
+
+</body>
+</html>

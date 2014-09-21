@@ -1,0 +1,89 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+  <title>patient list</title>
+ <!-- <link href="css/ratchet.min.css" rel="stylesheet"> -->
+ <link href="css/steps.css.scss" rel="stylesheet">
+ <link href="js/medicalsession.js.coffee" rel="js">
+ <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+</head>
+
+
+<!-- progress steps  -->
+
+
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<div id="steps">
+  <div class="step active" data-desc="Select Patient">1</div>
+  <div class="step " data-desc="Select Meds">2</div>
+  <div class="step" data-desc="Education">3</div>
+  <div class="step" data-desc="Teach Back">4</div>
+</div>
+
+<script>
+$(document).ready( function() {
+  $('.step').each(function(index, element) {
+    // element == this
+    $(element).not('.active').addClass('done');
+    $('.done').html('<i class="icon-ok"></i>');
+    if($(this).is('.active')) {
+      return false;
+    }
+  });
+});
+</script>
+<!-- end progress steps -->
+
+<!-- line break -->
+<hr style="border:none;border-top:1px solid rgba(102, 102, 102, 0.16);border-bottom:1px solid rgba(204, 204, 204, 0);" />
+<!-- end -->
+
+<%= render "/css" %>
+
+<hr style="border:none;border-top:1px solid rgba(102, 102, 102, 0.16);border-bottom:1px solid rgba(204, 204, 204, 0);" />
+
+<a href="/session/new"><button class="button-large pure-button" style="font-size: 125%;">Medications</button></a><br>
+
+
+
+<body>
+
+
+<div class="dashdiv">
+
+<span class="toggler active" data-toggle="grid"><span class="entypo-layout"></span></span>
+<span class="toggler" data-toggle="list"><span class="entypo-list"></span></span>
+
+<ul class="surveys list">
+
+<%= render "/patient1" %>
+<%= render "/patient2" %>
+<%= render "/patient3" %>
+<%= render "/patient4" %>
+<%= render "/patient5" %>
+<%= render "/patient6" %>
+<%= render "/patient7" %>
+<%= render "/patient8" %>
+<%= render "/patient9" %>
+<%= render "/patient9" %>
+<%= render "/patient10" %>
+
+</ul>
+
+
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('div.dashdiv').each(function()
+    {
+          $(this).hide().delay(1000).fadeIn(0);
+    });
+});
+</script>
+
+</body>
+</html>

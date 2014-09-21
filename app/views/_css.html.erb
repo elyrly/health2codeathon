@@ -1,0 +1,69 @@
+<!-- doctors profile via UID -->
+<div id="content-placeholder"></div>
+<script id="doc-template" type="text/x-handlebars-template">
+
+<h1>{{data.profile.first_name}} {{data.profile.last_name}}, {{data.profile.title}}</h1>
+<img src="/img/map.png" alt="" style="max-width:100%;
+max-height:100%;
+margin:auto;
+display:block;">
+
+<body>
+
+     <td><img src="{{data.profile.image_url}}" style="z-index: 1;
+margin-top: -1000px;"></img></td>
+<div id="DIV_1" style="bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    height: 25px;
+    letter-spacing: 0.980000019073486px;
+    text-align: center;
+    text-shadow: rgba(91, 98, 99, 0.0980392) 0px 1px 1px;
+    width: 108px;
+    perspective-origin: 54px 12.5px;
+    transform-origin: 54px 12.5px;
+    background: rgb(42, 185, 164) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(255, 255, 255);
+    font: normal normal normal 14px/25px ProximaNovaReg, 'Helvetica Neue', Helvetica,">
+  Verified
+</div>
+
+
+    <p class="address">
+        {{#data.practices}}
+        {{name}}<br>
+        {{visit_address.street}}<br>
+        {{visit_address.city}}, {{visit_address.state}} {{visit_address.zip}}
+        {{/data.practices}}
+    </p>
+
+<div id="DIV_12">
+    <div id="DIV_2">
+        <meta content="Mona Ezzat-Velinov, MD" id="META_3" />
+        <meta content="BetterDoctor" id="META_4" />
+        <meta content="Mona Ezzat-Velinov is a Verified BetterDoctor. Dr. Ezzat-Velinov has passed our rigorous screening process, is highly rated by patients and has clean judicial records." id="META_5" />
+        <h3 id="H3_6">
+            <span id="SPAN_7"></span>Rating
+        </h3><i id="I_8"></i>
+        <div id="DIV_9">
+            <meta content="5" id="META_10" /><span id="SPAN_11"></span>
+        </div>
+    </div>
+</div>
+
+</script>
+</body>
+
+<script>
+var api_key = '7ad9eca9517bdd8b9bd29e634be7296e'; // Get your API key at developer.betterdoctor.com
+var doctor_uid = '547dd25c9d2471043a53cd8c841dc1e6'
+var resource_url = 'https://api.betterdoctor.com/2014-09-12/doctors/' + doctor_uid + '?user_key=' + api_key;
+
+$.get(resource_url, function (data) {
+    // data: { meta: {<metadata>}, data: {<Doctor>} }
+    var template = Handlebars.compile(document.getElementById('doc-template').innerHTML);
+    document.getElementById('content-placeholder').innerHTML = template(data);
+});
+</script>
+
+<!-- end doctor profile via UID -->
